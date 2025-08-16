@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: center;">
+        <ui:Label text="Label" name="player-name" style="color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+        <ui:Label text="Label" name="player-color" style="color: rgb(137, 137, 137); -unity-text-align: upper-center;" />
+        <ui:Button text="OK" name="ok" />
+    </ui:VisualElement>
+</ui:UXML>

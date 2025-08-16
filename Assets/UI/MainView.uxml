@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-end;">
+        <ui:Button text="NEW GAME" name="new-game" />
+        <ui:Button text="CREDITS" name="credits" />
+        <ui:Button text="EXIT" name="exit" />
+    </ui:VisualElement>
+</ui:UXML>

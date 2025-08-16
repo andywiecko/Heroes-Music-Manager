@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="EXIT" name="exit" />
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-end;">
+        <ui:Label text="Label" name="player-town" style="color: rgb(255, 255, 255); font-size: 24px;" />
+        <ui:Button text="BUILD" name="build" />
+        <ui:Button text="LEVEL UP" name="level" />
+        <ui:Button text="FIGHT" name="fight" />
+        <ui:Button text="NEXT" name="next" />
+    </ui:VisualElement>
+</ui:UXML>
