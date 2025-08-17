@@ -146,8 +146,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 42bd95563d7a9a541beddc15eb978bdd, type: 3}
-  m_Resource: {fileID: 8300000, guid: 42bd95563d7a9a541beddc15eb978bdd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af97c259949222d42bef7b09ab1023a9, type: 3}
+  m_Resource: {fileID: 8300000, guid: af97c259949222d42bef7b09ab1023a9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -427,8 +427,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0a59960a6430944a9d079a66982616b, type: 3}
-  m_Resource: {fileID: 8300000, guid: d0a59960a6430944a9d079a66982616b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2b39b1ae9342fc9498f01a83fe013b22, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2b39b1ae9342fc9498f01a83fe013b22, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -582,20 +582,20 @@ MonoBehaviour:
   buildAudioSource: {fileID: 227937719}
   levelAudioSource: {fileID: 1899091539}
   mainView: {fileID: 2081471103}
+  battleView: {fileID: 1962742423}
   nextPlayerView: {fileID: 9197481963319205126, guid: 5733124f04d0332499c1850e5fc9f0bb, type: 3}
   playerView: {fileID: 9197481963319205126, guid: b7c81b55908a5dd41b4773bad1e8d79e, type: 3}
-  battleView: {fileID: 1962742423}
-  nextWeek: {fileID: 8300000, guid: c538139888dc3504eaa253b2582f4b60, type: 3}
-  castleClip: {fileID: 8300000, guid: 74d2aaae276130c4fbe7eddbd9f6bb7d, type: 3}
-  rampartClip: {fileID: 8300000, guid: f76a80697eaf2e24abce8efdeef6f828, type: 3}
-  towerClip: {fileID: 8300000, guid: 78db1c60cae0d4c4091eb66aa2ddd0e7, type: 3}
-  infernoClip: {fileID: 8300000, guid: f317e3e33c6b385439b63c684a1d36fb, type: 3}
-  necropolisClip: {fileID: 8300000, guid: 906c4fd310b9ce84983375d98009f5e4, type: 3}
-  dungeonClip: {fileID: 8300000, guid: 0018eb7366b6c3740802ccd482ed8bc9, type: 3}
-  strongholdClip: {fileID: 8300000, guid: 807aa341c2531664f8d99da5c2ed683b, type: 3}
-  fortressClip: {fileID: 8300000, guid: fbebc9f3bee10cd41b36e954a1383797, type: 3}
-  winClip: {fileID: 8300000, guid: fd902d21a08363b4490d423c81949ead, type: 3}
-  loseClip: {fileID: 8300000, guid: 65427c8d1fdad7047b449431e82fff20, type: 3}
+  nextWeek: {fileID: 8300000, guid: 8c16431ff372ab5439125140e54f815f, type: 3}
+  castleClip: {fileID: 8300000, guid: 9fee32e39cd86bf48aa23aea150a1817, type: 3}
+  rampartClip: {fileID: 8300000, guid: 1bd6b273b632a794186b7cb3950c4eaf, type: 3}
+  towerClip: {fileID: 8300000, guid: 25a5a7b4857372747a0dda619065cf82, type: 3}
+  infernoClip: {fileID: 8300000, guid: 848a234d46ffe484a828b660e9f9cafd, type: 3}
+  necropolisClip: {fileID: 8300000, guid: 3df01bb02a806e749825f48b4360011e, type: 3}
+  dungeonClip: {fileID: 8300000, guid: dc985afb3aa2cdd4e8f1cc76cbe986ad, type: 3}
+  strongholdClip: {fileID: 8300000, guid: 672e28526441d90448703cfefeb1ebdc, type: 3}
+  fortressClip: {fileID: 8300000, guid: eaa6a3e796d28ad4aa38214d59072319, type: 3}
+  winClip: {fileID: 8300000, guid: 416ada87da657b742bb40d538a13e777, type: 3}
+  loseClip: {fileID: 8300000, guid: 8f9a5d0825aee9b4aac3373d9f7d1091, type: 3}
   townsData: 00000000
 --- !u!1 &1899091538
 GameObject:
@@ -624,8 +624,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 96fb2996a9943ec478324c354f3948ca, type: 3}
-  m_Resource: {fileID: 8300000, guid: 96fb2996a9943ec478324c354f3948ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ddfacbb98fc166a418418c3d67181923, type: 3}
+  m_Resource: {fileID: 8300000, guid: ddfacbb98fc166a418418c3d67181923, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -772,18 +772,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1040844262}
-  begin1: {fileID: 8300000, guid: 5f526d657c28c124a9a8c0a8a14ff587, type: 3}
-  begin2: {fileID: 8300000, guid: f0b9697ff9fa5224b825b59bed917208, type: 3}
-  begin3: {fileID: 8300000, guid: 2b168c93872a06f4698f0b17910ac7d3, type: 3}
-  begin4: {fileID: 8300000, guid: fdf25439849b17a419fb533562881809, type: 3}
-  begin5: {fileID: 8300000, guid: d78ee8dea9bb69b4d83e5ed0318594ba, type: 3}
-  begin6: {fileID: 8300000, guid: 1fb4ac0e10c8aa84087e2ad94008c630, type: 3}
-  begin7: {fileID: 8300000, guid: a8efcc9594b1ac84da4d92868f3582e0, type: 3}
-  begin8: {fileID: 8300000, guid: ab1ce527417f8724cabc47bebccbefc3, type: 3}
-  combat1: {fileID: 8300000, guid: ba6a610898bc19a4da73e972c195e750, type: 3}
-  combat2: {fileID: 8300000, guid: e56a41adfbdcae04cbbf780388469c44, type: 3}
-  combat3: {fileID: 8300000, guid: 3fbed79aade93c540a84272a3c095e29, type: 3}
-  combat4: {fileID: 8300000, guid: 39cc930c52991b144b2acd89d4948e6a, type: 3}
+  begin1: {fileID: 8300000, guid: 4d1d82564c8451b4f80d05c6f62f063d, type: 3}
+  begin2: {fileID: 8300000, guid: 84173fbddded6db418667198ffc91f31, type: 3}
+  begin3: {fileID: 8300000, guid: d4a6972a5cea044408fddf31497cf70a, type: 3}
+  begin4: {fileID: 8300000, guid: d6534017e0ff9f548a34245f7ba2e5d2, type: 3}
+  begin5: {fileID: 8300000, guid: 3ceb41bef3386a24583af107e01f09c5, type: 3}
+  begin6: {fileID: 8300000, guid: dde77f8d3c692ed4f87730e5d00a67d2, type: 3}
+  begin7: {fileID: 8300000, guid: 3de7de0b85a18e54088262e1093c7d2d, type: 3}
+  begin8: {fileID: 8300000, guid: 386f6aad42df875448a3a5152abcaefa, type: 3}
+  combat1: {fileID: 8300000, guid: d49fe9668f0ef3c4a8e21ed372688d8c, type: 3}
+  combat2: {fileID: 8300000, guid: 70576b848fdbaab44b3af3e64d2a720d, type: 3}
+  combat3: {fileID: 8300000, guid: 0f439576363ebee4485da915dbf6b0bf, type: 3}
+  combat4: {fileID: 8300000, guid: d326c9ac200918c4499d18f4ad924b74, type: 3}
 --- !u!114 &1962742424
 MonoBehaviour:
   m_ObjectHideFlags: 0
