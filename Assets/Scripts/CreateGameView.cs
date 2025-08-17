@@ -4,18 +4,6 @@ using UnityEngine.UIElements;
 
 namespace andywiecko.HeroesMusicManager
 {
-    public enum Town
-    {
-        Castle,
-        Rampart,
-        Tower,
-        Inferno,
-        Necropolis,
-        Dungeon,
-        Stronghold,
-        Fortress,
-    }
-
     public class CreateGameView : MonoBehaviour
     {
         public const int TownMax = 8;
