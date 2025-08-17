@@ -585,17 +585,7 @@ MonoBehaviour:
   battleView: {fileID: 1962742423}
   nextPlayerView: {fileID: 9197481963319205126, guid: 5733124f04d0332499c1850e5fc9f0bb, type: 3}
   playerView: {fileID: 9197481963319205126, guid: b7c81b55908a5dd41b4773bad1e8d79e, type: 3}
-  nextWeek: {fileID: 8300000, guid: 8c16431ff372ab5439125140e54f815f, type: 3}
-  castleClip: {fileID: 8300000, guid: 9fee32e39cd86bf48aa23aea150a1817, type: 3}
-  rampartClip: {fileID: 8300000, guid: 1bd6b273b632a794186b7cb3950c4eaf, type: 3}
-  towerClip: {fileID: 8300000, guid: 25a5a7b4857372747a0dda619065cf82, type: 3}
-  infernoClip: {fileID: 8300000, guid: 848a234d46ffe484a828b660e9f9cafd, type: 3}
-  necropolisClip: {fileID: 8300000, guid: 3df01bb02a806e749825f48b4360011e, type: 3}
-  dungeonClip: {fileID: 8300000, guid: dc985afb3aa2cdd4e8f1cc76cbe986ad, type: 3}
-  strongholdClip: {fileID: 8300000, guid: 672e28526441d90448703cfefeb1ebdc, type: 3}
-  fortressClip: {fileID: 8300000, guid: eaa6a3e796d28ad4aa38214d59072319, type: 3}
-  winClip: {fileID: 8300000, guid: 416ada87da657b742bb40d538a13e777, type: 3}
-  loseClip: {fileID: 8300000, guid: 8f9a5d0825aee9b4aac3373d9f7d1091, type: 3}
+  audioData: {fileID: 1993193150}
   townsData: 00000000
 --- !u!1 &1899091538
 GameObject:
@@ -772,18 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1040844262}
-  begin1: {fileID: 8300000, guid: 4d1d82564c8451b4f80d05c6f62f063d, type: 3}
-  begin2: {fileID: 8300000, guid: 84173fbddded6db418667198ffc91f31, type: 3}
-  begin3: {fileID: 8300000, guid: d4a6972a5cea044408fddf31497cf70a, type: 3}
-  begin4: {fileID: 8300000, guid: d6534017e0ff9f548a34245f7ba2e5d2, type: 3}
-  begin5: {fileID: 8300000, guid: 3ceb41bef3386a24583af107e01f09c5, type: 3}
-  begin6: {fileID: 8300000, guid: dde77f8d3c692ed4f87730e5d00a67d2, type: 3}
-  begin7: {fileID: 8300000, guid: 3de7de0b85a18e54088262e1093c7d2d, type: 3}
-  begin8: {fileID: 8300000, guid: 386f6aad42df875448a3a5152abcaefa, type: 3}
-  combat1: {fileID: 8300000, guid: d49fe9668f0ef3c4a8e21ed372688d8c, type: 3}
-  combat2: {fileID: 8300000, guid: 70576b848fdbaab44b3af3e64d2a720d, type: 3}
-  combat3: {fileID: 8300000, guid: 0f439576363ebee4485da915dbf6b0bf, type: 3}
-  combat4: {fileID: 8300000, guid: d326c9ac200918c4499d18f4ad924b74, type: 3}
+  audioData: {fileID: 1993193150}
 --- !u!114 &1962742424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +782,73 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
+--- !u!1 &1993193148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993193149}
+  - component: {fileID: 1993193150}
+  m_Layer: 0
+  m_Name: Audio Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993193149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993193148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993193150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993193148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae82033d62a4e3d48845d4274f3ee8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <CastleClip>k__BackingField: {fileID: 8300000, guid: 9fee32e39cd86bf48aa23aea150a1817, type: 3}
+  <RampartClip>k__BackingField: {fileID: 8300000, guid: 1bd6b273b632a794186b7cb3950c4eaf, type: 3}
+  <TowerClip>k__BackingField: {fileID: 8300000, guid: 25a5a7b4857372747a0dda619065cf82, type: 3}
+  <InfernoClip>k__BackingField: {fileID: 8300000, guid: 848a234d46ffe484a828b660e9f9cafd, type: 3}
+  <NecropolisClip>k__BackingField: {fileID: 8300000, guid: 3df01bb02a806e749825f48b4360011e, type: 3}
+  <DungeonClip>k__BackingField: {fileID: 8300000, guid: dc985afb3aa2cdd4e8f1cc76cbe986ad, type: 3}
+  <StrongholdClip>k__BackingField: {fileID: 8300000, guid: 672e28526441d90448703cfefeb1ebdc, type: 3}
+  <FortressClip>k__BackingField: {fileID: 8300000, guid: eaa6a3e796d28ad4aa38214d59072319, type: 3}
+  <WinClip>k__BackingField: {fileID: 8300000, guid: 416ada87da657b742bb40d538a13e777, type: 3}
+  <LoseClip>k__BackingField: {fileID: 8300000, guid: 8f9a5d0825aee9b4aac3373d9f7d1091, type: 3}
+  <Battle1>k__BackingField: {fileID: 8300000, guid: 4d1d82564c8451b4f80d05c6f62f063d, type: 3}
+  <Battle2>k__BackingField: {fileID: 8300000, guid: 84173fbddded6db418667198ffc91f31, type: 3}
+  <Battle3>k__BackingField: {fileID: 8300000, guid: d4a6972a5cea044408fddf31497cf70a, type: 3}
+  <Battle4>k__BackingField: {fileID: 8300000, guid: d6534017e0ff9f548a34245f7ba2e5d2, type: 3}
+  <Battle5>k__BackingField: {fileID: 8300000, guid: 3ceb41bef3386a24583af107e01f09c5, type: 3}
+  <Battle6>k__BackingField: {fileID: 8300000, guid: dde77f8d3c692ed4f87730e5d00a67d2, type: 3}
+  <Battle7>k__BackingField: {fileID: 8300000, guid: 3de7de0b85a18e54088262e1093c7d2d, type: 3}
+  <Battle8>k__BackingField: {fileID: 8300000, guid: 386f6aad42df875448a3a5152abcaefa, type: 3}
+  <Combat1>k__BackingField: {fileID: 8300000, guid: d49fe9668f0ef3c4a8e21ed372688d8c, type: 3}
+  <Combat2>k__BackingField: {fileID: 8300000, guid: 70576b848fdbaab44b3af3e64d2a720d, type: 3}
+  <Combat3>k__BackingField: {fileID: 8300000, guid: 0f439576363ebee4485da915dbf6b0bf, type: 3}
+  <Combat4>k__BackingField: {fileID: 8300000, guid: d326c9ac200918c4499d18f4ad924b74, type: 3}
+  <NextWeekClip>k__BackingField: {fileID: 8300000, guid: 8c16431ff372ab5439125140e54f815f, type: 3}
 --- !u!1 &2081471103
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +922,7 @@ SceneRoots:
   - {fileID: 1040844261}
   - {fileID: 227937720}
   - {fileID: 1899091540}
+  - {fileID: 1993193149}
   - {fileID: 2081471105}
   - {fileID: 1525681715}
   - {fileID: 1962742422}

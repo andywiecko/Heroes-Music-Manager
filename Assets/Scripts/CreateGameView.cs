@@ -8,28 +8,19 @@ namespace andywiecko.HeroesMusicManager
     {
         public const int TownMax = 8;
 
+        [Header("Audio sources")]
         [SerializeField] private AudioSource audioSource = default;
         [SerializeField] private AudioSource buildAudioSource = default;
         [SerializeField] private AudioSource levelAudioSource = default;
 
         [SerializeField] private GameObject mainView = default;
+        [SerializeField] private BattleView battleView = default;
         [SerializeField] private VisualTreeAsset nextPlayerView = default;
         [SerializeField] private VisualTreeAsset playerView = default;
-        [SerializeField] private BattleView battleView = default;
 
-        [SerializeField] private AudioClip nextWeek = default;
-        [SerializeField] private AudioClip castleClip = default;
-        [SerializeField] private AudioClip rampartClip = default;
-        [SerializeField] private AudioClip towerClip = default;
-        [SerializeField] private AudioClip infernoClip = default;
-        [SerializeField] private AudioClip necropolisClip = default;
-        [SerializeField] private AudioClip dungeonClip = default;
-        [SerializeField] private AudioClip strongholdClip = default;
-        [SerializeField] private AudioClip fortressClip = default;
+        [SerializeField] private AudioData audioData = default;
 
-        [SerializeField] private AudioClip winClip = default;
-        [SerializeField] private AudioClip loseClip = default;
-
+        [Header("Data")]
         [SerializeField] private List<Town> townsData = new();
 
         private UIDocument ui;
@@ -89,7 +80,7 @@ namespace andywiecko.HeroesMusicManager
 
                 var nView = turn.AddComponent<NextPlayerView>();
                 nView.Town = townsData[i];
-                nView.SetAudio(audioSource, nextWeek);
+                nView.SetAudio(audioSource, audioData.NextWeekClip);
                 nViews.Add(nView);
 
                 var player = new GameObject($"Player {i + 1}") { transform = { parent = players.transform } };
@@ -100,22 +91,11 @@ namespace andywiecko.HeroesMusicManager
                 var pView = player.AddComponent<PlayerView>();
                 pView.Town = townsData[i];
                 pView.AudioSource = audioSource;
-                pView.AudioClip = townsData[i] switch
-                {
-                    Town.Castle => castleClip,
-                    Town.Rampart => rampartClip,
-                    Town.Tower => towerClip,
-                    Town.Inferno => infernoClip,
-                    Town.Necropolis => necropolisClip,
-                    Town.Dungeon => dungeonClip,
-                    Town.Stronghold => strongholdClip,
-                    Town.Fortress => fortressClip,
-                    _ => throw new(),
-                };
+                pView.AudioClip = audioData.GetTownClip(townsData[i]);
                 pView.BattleView = battleView;
                 pViews.Add(pView);
-                pView.WinClip = winClip;
-                pView.LoseClip = loseClip;
+                pView.WinClip = audioData.WinClip;
+                pView.LoseClip = audioData.LoseClip;
                 pView.BuildAudioSource = buildAudioSource;
                 pView.LevelAudioSource = levelAudioSource;
 
