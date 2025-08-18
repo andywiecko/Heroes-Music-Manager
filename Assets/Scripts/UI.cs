@@ -14,6 +14,7 @@ namespace andywiecko.HeroesMusicManager
         [SerializeField] private AudioSource mainAudioSource = default;
         [SerializeField] private AudioSource buildAudioSource = default;
         [SerializeField] private AudioSource levelAudioSource = default;
+        [SerializeField] private AudioSource clickAudioSource = default;
 
         [Header("UI Assets")]
         [SerializeField] private VisualTreeAsset mainViewTemplate = default;
@@ -65,8 +66,8 @@ namespace andywiecko.HeroesMusicManager
         private void RegisterMainView()
         {
             mainView.style.height = new StyleLength(Length.Percent(100));
-            mainView.Q<Button>("new-game").clicked += () => { Root.Clear(); Root.Add(createView); };
-            mainView.Q<Button>("credits").clicked += () => Debug.Log("Show credits");
+            mainView.Q<Button>("new-game").clicked += () => { Root.Clear(); Root.Add(createView); clickAudioSource.Play(); };
+            mainView.Q<Button>("credits").clicked += () => { Debug.Log("Show credits"); clickAudioSource.Play(); };
             mainView.Q<Button>("exit").clicked += Application.Quit;
         }
 
@@ -82,9 +83,9 @@ namespace andywiecko.HeroesMusicManager
             createView.style.height = new StyleLength(Length.Percent(100));
 
             var begin = createView.Q<Button>("begin");
-            begin.clicked += () => { Root.Clear(); CreatePlayers(); Root.Add(nextPlayerViews[0]); MainAudio(audioData.NextWeekClip); };
+            begin.clicked += () => { Root.Clear(); CreatePlayers(); Root.Add(nextPlayerViews[0]); MainAudio(audioData.NextWeekClip); clickAudioSource.Play(); };
 
-            createView.Q<Button>("back").clicked += () => { Root.Clear(); Root.Add(mainView); townsData.Clear(); townsData.Add(Town.Castle); begin.SetEnabled(townsData.Count > 0); };
+            createView.Q<Button>("back").clicked += () => { Root.Clear(); Root.Add(mainView); townsData.Clear(); townsData.Add(Town.Castle); begin.SetEnabled(townsData.Count > 0); clickAudioSource.Play(); };
 
             var towns = createView.Q<ListView>("towns");
             towns.makeItem = () => towns.itemTemplate.CloneTree();
@@ -92,29 +93,29 @@ namespace andywiecko.HeroesMusicManager
             towns.bindItem = (v, i) =>
             {
                 v.Q<Label>("town").text = townsData[i].ToString();
-                v.Q<Button>("remove").clicked += () => { townsData.RemoveAt(i); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); };
-                v.Q<Button>("left").clicked += () => { townsData[i] = (Town)(((int)townsData[i] - 1 + TownMax) % TownMax); towns.Rebuild(); };
-                v.Q<Button>("right").clicked += () => { townsData[i] = (Town)(((int)townsData[i] + 1) % TownMax); towns.Rebuild(); };
+                v.Q<Button>("remove").clicked += () => { townsData.RemoveAt(i); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudioSource.Play(); };
+                v.Q<Button>("left").clicked += () => { townsData[i] = (Town)(((int)townsData[i] - 1 + TownMax) % TownMax); towns.Rebuild(); clickAudioSource.Play(); };
+                v.Q<Button>("right").clicked += () => { townsData[i] = (Town)(((int)townsData[i] + 1) % TownMax); towns.Rebuild(); clickAudioSource.Play(); };
 
-                if (i != 0 && townsData.Count > 1) v.Q<Button>("up").clicked += () => { (townsData[i - 1], townsData[i]) = (townsData[i], townsData[i - 1]); towns.Rebuild(); };
+                if (i != 0 && townsData.Count > 1) v.Q<Button>("up").clicked += () => { (townsData[i - 1], townsData[i]) = (townsData[i], townsData[i - 1]); towns.Rebuild(); clickAudioSource.Play(); };
                 else v.Q<Button>("up").SetEnabled(false);
 
-                if (i != townsData.Count - 1 && townsData.Count > 1) v.Q<Button>("down").clicked += () => { (townsData[i + 1], townsData[i]) = (townsData[i], townsData[i + 1]); towns.Rebuild(); };
+                if (i != townsData.Count - 1 && townsData.Count > 1) v.Q<Button>("down").clicked += () => { (townsData[i + 1], townsData[i]) = (townsData[i], townsData[i + 1]); towns.Rebuild(); clickAudioSource.Play(); };
                 else v.Q<Button>("down").SetEnabled(false);
             };
 
             var scrollView = towns.Q<ScrollView>();
             scrollView.verticalScrollerVisibility = ScrollerVisibility.AlwaysVisible;
 
-            createView.Q<Button>("add-player").clicked += () => { townsData.Add((Town)(townsData.Count % TownMax)); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); };
+            createView.Q<Button>("add-player").clicked += () => { townsData.Add((Town)(townsData.Count % TownMax)); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudioSource.Play(); };
         }
 
         private void RegisterBattleView()
         {
             battleView.style.height = new StyleLength(Length.Percent(100));
 
-            battleView.Q<Button>("win").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.WinClip); afterBattle = true; };
-            battleView.Q<Button>("lose").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.LoseClip); afterBattle = true; };
+            battleView.Q<Button>("win").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.WinClip); afterBattle = true; clickAudioSource.Play(); };
+            battleView.Q<Button>("lose").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.LoseClip); afterBattle = true; clickAudioSource.Play(); };
         }
 
         private void CreatePlayers()
@@ -133,7 +134,7 @@ namespace andywiecko.HeroesMusicManager
                 playerView.style.height = new StyleLength(Length.Percent(100));
 
                 playerView.Q<Label>("player-town").text = townsData[i].ToString();
-                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; isBattle = true; MainAudio(audioData.GetRandomBattle()); };
+                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; isBattle = true; MainAudio(audioData.GetRandomBattle()); clickAudioSource.Play(); };
                 playerView.Q<Button>("build").clicked += buildAudioSource.Play;
                 playerView.Q<Button>("level").clicked += levelAudioSource.Play;
                 playerView.Q<Button>("exit").clicked += Application.Quit;
@@ -144,11 +145,11 @@ namespace andywiecko.HeroesMusicManager
                 var player = playerViews[i];
                 var townClip = audioData.GetTownClip(townsData[i]);
                 var town = townsData[i];
-                nextPlayerViews[i].Q<Button>("ok").clicked += () => { Root.Clear(); Root.Add(player); MainAudio(townClip, loop: true); currentTown = town; };
+                nextPlayerViews[i].Q<Button>("ok").clicked += () => { Root.Clear(); Root.Add(player); MainAudio(townClip, loop: true); currentTown = town; clickAudioSource.Play(); };
 
                 var next = nextPlayerViews[(i + 1) % townsData.Count];
                 var nextClip = audioData.NextWeekClip;
-                playerViews[i].Q<Button>("next").clicked += () => { Root.Clear(); Root.Add(next); MainAudio(nextClip); };
+                playerViews[i].Q<Button>("next").clicked += () => { Root.Clear(); Root.Add(next); MainAudio(nextClip); clickAudioSource.Play(); };
             }
         }
     }
