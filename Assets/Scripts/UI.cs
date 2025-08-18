@@ -9,12 +9,7 @@ namespace andywiecko.HeroesMusicManager
     {
         private const int TownMax = 8;
 
-        [Header("Audio")]
         [SerializeField] private AudioData audioData = default;
-        [SerializeField] private AudioSource mainAudioSource = default;
-        [SerializeField] private AudioSource buildAudioSource = default;
-        [SerializeField] private AudioSource levelAudioSource = default;
-        [SerializeField] private AudioSource clickAudioSource = default;
 
         [Header("UI Assets")]
         [SerializeField] private VisualTreeAsset mainViewTemplate = default;
@@ -24,18 +19,41 @@ namespace andywiecko.HeroesMusicManager
         [SerializeField] private VisualTreeAsset battleViewTemplate = default;
 
         private VisualElement Root => ui.rootVisualElement;
-
         private UIDocument ui;
 
+        private AudioSource mainAudioSource, buildAudioSource, levelAudioSource, clickAudioSource;
         private VisualElement mainView, createView, battleView, currentPlayer;
         private readonly List<VisualElement> nextPlayerViews = new(), playerViews = new();
         private readonly List<Town> townsData = new() { Town.Castle };
         private Town currentTown;
         private bool isBattle, afterBattle;
+        private Unity.Mathematics.Random random;
 
         private void Awake()
         {
             ui = GetComponent<UIDocument>();
+            random = new(seed: 42);
+
+            mainAudioSource = gameObject.AddComponent<AudioSource>();
+            mainAudioSource.clip = audioData.MainMenuClip;
+            mainAudioSource.loop = true;
+            mainAudioSource.playOnAwake = false;
+            mainAudioSource.Play();
+
+            buildAudioSource = gameObject.AddComponent<AudioSource>();
+            buildAudioSource.clip = audioData.BuildClip;
+            buildAudioSource.playOnAwake = false;
+            buildAudioSource.loop = false;
+
+            levelAudioSource = gameObject.AddComponent<AudioSource>();
+            levelAudioSource.clip = audioData.LevelUpClip;
+            levelAudioSource.playOnAwake = false;
+            levelAudioSource.loop = false;
+
+            clickAudioSource = gameObject.AddComponent<AudioSource>();
+            clickAudioSource.clip = audioData.ClickClip;
+            clickAudioSource.playOnAwake = false;
+            clickAudioSource.loop = false;
 
             mainView = mainViewTemplate.CloneTree();
             createView = createViewTemplate.CloneTree();
@@ -58,7 +76,7 @@ namespace andywiecko.HeroesMusicManager
 
             if (isBattle && !mainAudioSource.isPlaying)
             {
-                MainAudio(audioData.GetRandomCombat(), loop: true);
+                MainAudio(audioData.GetRandomCombat(ref random), loop: true);
                 isBattle = false;
             }
         }
@@ -134,7 +152,7 @@ namespace andywiecko.HeroesMusicManager
                 playerView.style.height = new StyleLength(Length.Percent(100));
 
                 playerView.Q<Label>("player-town").text = townsData[i].ToString();
-                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; isBattle = true; MainAudio(audioData.GetRandomBattle()); clickAudioSource.Play(); };
+                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; isBattle = true; MainAudio(audioData.GetRandomBattle(ref random)); clickAudioSource.Play(); };
                 playerView.Q<Button>("build").clicked += buildAudioSource.Play;
                 playerView.Q<Button>("level").clicked += levelAudioSource.Play;
                 playerView.Q<Button>("exit").clicked += Application.Quit;

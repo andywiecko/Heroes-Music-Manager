@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae82033d62a4e3d48845d4274f3ee8ec, type: 3}
+  m_Name: AudioData
+  m_EditorClassIdentifier: 
+  <CastleClip>k__BackingField: {fileID: 8300000, guid: 9fee32e39cd86bf48aa23aea150a1817, type: 3}
+  <RampartClip>k__BackingField: {fileID: 8300000, guid: 1bd6b273b632a794186b7cb3950c4eaf, type: 3}
+  <TowerClip>k__BackingField: {fileID: 8300000, guid: 25a5a7b4857372747a0dda619065cf82, type: 3}
+  <InfernoClip>k__BackingField: {fileID: 8300000, guid: 848a234d46ffe484a828b660e9f9cafd, type: 3}
+  <NecropolisClip>k__BackingField: {fileID: 8300000, guid: 3df01bb02a806e749825f48b4360011e, type: 3}
+  <DungeonClip>k__BackingField: {fileID: 8300000, guid: dc985afb3aa2cdd4e8f1cc76cbe986ad, type: 3}
+  <StrongholdClip>k__BackingField: {fileID: 8300000, guid: 672e28526441d90448703cfefeb1ebdc, type: 3}
+  <FortressClip>k__BackingField: {fileID: 8300000, guid: eaa6a3e796d28ad4aa38214d59072319, type: 3}
+  <WinClip>k__BackingField: {fileID: 8300000, guid: 416ada87da657b742bb40d538a13e777, type: 3}
+  <LoseClip>k__BackingField: {fileID: 8300000, guid: 8f9a5d0825aee9b4aac3373d9f7d1091, type: 3}
+  <Battle1>k__BackingField: {fileID: 8300000, guid: 4d1d82564c8451b4f80d05c6f62f063d, type: 3}
+  <Battle2>k__BackingField: {fileID: 8300000, guid: 84173fbddded6db418667198ffc91f31, type: 3}
+  <Battle3>k__BackingField: {fileID: 8300000, guid: d4a6972a5cea044408fddf31497cf70a, type: 3}
+  <Battle4>k__BackingField: {fileID: 8300000, guid: d6534017e0ff9f548a34245f7ba2e5d2, type: 3}
+  <Battle5>k__BackingField: {fileID: 8300000, guid: 3ceb41bef3386a24583af107e01f09c5, type: 3}
+  <Battle6>k__BackingField: {fileID: 8300000, guid: dde77f8d3c692ed4f87730e5d00a67d2, type: 3}
+  <Battle7>k__BackingField: {fileID: 8300000, guid: 3de7de0b85a18e54088262e1093c7d2d, type: 3}
+  <Battle8>k__BackingField: {fileID: 8300000, guid: 386f6aad42df875448a3a5152abcaefa, type: 3}
+  <Combat1>k__BackingField: {fileID: 8300000, guid: d49fe9668f0ef3c4a8e21ed372688d8c, type: 3}
+  <Combat2>k__BackingField: {fileID: 8300000, guid: 70576b848fdbaab44b3af3e64d2a720d, type: 3}
+  <Combat3>k__BackingField: {fileID: 8300000, guid: 0f439576363ebee4485da915dbf6b0bf, type: 3}
+  <Combat4>k__BackingField: {fileID: 8300000, guid: d326c9ac200918c4499d18f4ad924b74, type: 3}
+  <MainMenuClip>k__BackingField: {fileID: 8300000, guid: 2b39b1ae9342fc9498f01a83fe013b22, type: 3}
+  <NextWeekClip>k__BackingField: {fileID: 8300000, guid: 8c16431ff372ab5439125140e54f815f, type: 3}
+  <ClickClip>k__BackingField: {fileID: 8300000, guid: 353bbf09d19ca8a419600775adbad87b, type: 3}
+  <BuildClip>k__BackingField: {fileID: 8300000, guid: af97c259949222d42bef7b09ab1023a9, type: 3}
+  <LevelUpClip>k__BackingField: {fileID: 8300000, guid: ddfacbb98fc166a418418c3d67181923, type: 3}

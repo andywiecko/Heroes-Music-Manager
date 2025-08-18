@@ -2,9 +2,10 @@ using UnityEngine;
 
 namespace andywiecko.HeroesMusicManager
 {
-    public class AudioData : MonoBehaviour
+    [CreateAssetMenu(fileName = "AudioData", menuName = "HeroesMusicManager/Audio Data", order = 1)]
+    public class AudioData : ScriptableObject
     {
-        [field: Header("Castle audio clips")]
+        [field: Header("Town audio clips")]
         [field: SerializeField] public AudioClip CastleClip { get; private set; } = default;
         [field: SerializeField] public AudioClip RampartClip { get; private set; } = default;
         [field: SerializeField] public AudioClip TowerClip { get; private set; } = default;
@@ -33,9 +34,11 @@ namespace andywiecko.HeroesMusicManager
         [field: SerializeField] public AudioClip Combat4 { get; private set; } = default;
 
         [field: Header("Misc audio clips")]
+        [field: SerializeField] public AudioClip MainMenuClip { get; private set; } = default;
         [field: SerializeField] public AudioClip NextWeekClip { get; private set; } = default;
-
-        private Unity.Mathematics.Random random;
+        [field: SerializeField] public AudioClip ClickClip { get; private set; } = default;
+        [field: SerializeField] public AudioClip BuildClip { get; private set; } = default;
+        [field: SerializeField] public AudioClip LevelUpClip { get; private set; } = default;
 
         public AudioClip GetTownClip(Town town) => town switch
         {
@@ -50,7 +53,7 @@ namespace andywiecko.HeroesMusicManager
             _ => throw new(),
         };
 
-        public AudioClip GetRandomCombat() => random.NextInt(0, 4) switch
+        public AudioClip GetRandomCombat(ref Unity.Mathematics.Random random) => random.NextInt(0, 4) switch
         {
             0 => Combat1,
             1 => Combat2,
@@ -59,7 +62,7 @@ namespace andywiecko.HeroesMusicManager
             _ => throw new(),
         };
 
-        public AudioClip GetRandomBattle() => random.NextInt(0, 8) switch
+        public AudioClip GetRandomBattle(ref Unity.Mathematics.Random random) => random.NextInt(0, 8) switch
         {
             0 => Battle1,
             1 => Battle2,
@@ -71,10 +74,5 @@ namespace andywiecko.HeroesMusicManager
             7 => Battle8,
             _ => throw new(),
         };
-
-        private void Awake()
-        {
-            random = new(seed: 42);
-        }
     }
 }
