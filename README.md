@@ -2,7 +2,7 @@
 
 A fan-made Unity project for Android, designed to enhance the music and sound experience while playing *Heroes of Might and Magic III: The Board Game*.
 
-[![Watch the video](https://img.youtube.com/vi/r0If3x9Lcdc/maxresdefault.jpg)](https://www.youtube.com/watch?v=r0If3x9Lcdc)
+[![Watch the video](https://github.com/user-attachments/assets/2e8a8339-e0ae-41ab-87fd-a9ba7d887e6f)](https://www.youtube.com/watch?v=r0If3x9Lcdc)
 
 ⚠️ **Important:** This project does **not** provide music or sound assets. ⚠️  
 If you own the original tracks, place them in the `Assets/Data` folder.
