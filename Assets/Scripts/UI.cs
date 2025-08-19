@@ -4,6 +4,18 @@ using UnityEngine.UIElements;
 
 namespace andywiecko.HeroesMusicManager
 {
+    public enum Town
+    {
+        Castle,
+        Rampart,
+        Tower,
+        Inferno,
+        Necropolis,
+        Dungeon,
+        Stronghold,
+        Fortress,
+    }
+
     [RequireComponent(typeof(UIDocument))]
     public class UI : MonoBehaviour
     {
