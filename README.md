@@ -1,1 +1,27 @@
-# Heroes-Music-Manager
+# 🎶 Heroes Music Manager 🎶
+
+A fan-made Unity project for Android, designed to enhance the music and sound experience while playing *Heroes of Might and Magic III: The Board Game*.
+
+[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+
+⚠️ **Important:** This project does **not** provide music or sound assets. ⚠️  
+If you own the original tracks, place them in the `Assets/Data` folder.
+The repository includes the required `.meta` files, so if the assets are added correctly, everything should be ready for a successful build.
+
+- Developed with **Unity `v6000.1.4`**, but should also work with other versions of Unity.
+- Requires the **Android Build Support** module for Unity.
+
+## 🚀 Roadmap v1
+
+- Create UI artwork inspired by the original game.
+- Add `Settings` view for additional configuration.
+
+<br>
+
+> [!WARNING]
+> This is a **fan-made, non-commercial project** created solely for educational and entertainment purposes.
+> It is **not an official product** of Ubisoft Entertainment and is **not endorsed, sponsored, or affiliated** with Ubisoft Entertainment in any way.
+> All rights to the *Heroes of Might and Magic* series — including its music, artwork, names, and other assets — remain the exclusive property of **Ubisoft Entertainment** and their respective creators, and are used here solely for informational purposes within the scope of permitted use.
+>
+> This project does not intend to infringe upon any intellectual property rights.
+> If you are a rights holder and have concerns about the use of material in this repository, please contact me, and I will promptly remove the relevant content.
