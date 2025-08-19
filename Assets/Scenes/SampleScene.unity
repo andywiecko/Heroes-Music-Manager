@@ -292,6 +292,7 @@ MonoBehaviour:
   nextPlayerViewTemplate: {fileID: 9197481963319205126, guid: 5733124f04d0332499c1850e5fc9f0bb, type: 3}
   playerViewTemplate: {fileID: 9197481963319205126, guid: b7c81b55908a5dd41b4773bad1e8d79e, type: 3}
   battleViewTemplate: {fileID: 9197481963319205126, guid: dbee72bb0bcca964cb003112770c31b4, type: 3}
+  creditsViewTemplate: {fileID: 9197481963319205126, guid: 67ed55d0f57c2f543aac8df02bd27af7, type: 3}
 --- !u!114 &929187437
 MonoBehaviour:
   m_ObjectHideFlags: 0

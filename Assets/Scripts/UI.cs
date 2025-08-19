@@ -17,12 +17,13 @@ namespace andywiecko.HeroesMusicManager
         [SerializeField] private VisualTreeAsset nextPlayerViewTemplate = default;
         [SerializeField] private VisualTreeAsset playerViewTemplate = default;
         [SerializeField] private VisualTreeAsset battleViewTemplate = default;
+        [SerializeField] private VisualTreeAsset creditsViewTemplate = default;
 
         private VisualElement Root => ui.rootVisualElement;
         private UIDocument ui;
 
         private AudioSource mainAudioSource, buildAudioSource, levelAudioSource, clickAudioSource;
-        private VisualElement mainView, createView, battleView, currentPlayer;
+        private VisualElement mainView, createView, battleView, currentPlayer, creditsView;
         private readonly List<VisualElement> nextPlayerViews = new(), playerViews = new();
         private readonly List<Town> townsData = new() { Town.Castle };
         private Town currentTown;
@@ -58,10 +59,12 @@ namespace andywiecko.HeroesMusicManager
             mainView = mainViewTemplate.CloneTree();
             createView = createViewTemplate.CloneTree();
             battleView = battleViewTemplate.CloneTree();
+            creditsView = creditsViewTemplate.CloneTree();
 
             RegisterMainView();
             RegisterCreateView();
             RegisterBattleView();
+            RegisterCreditsView();
 
             ui.rootVisualElement.Add(mainView);
         }
@@ -85,7 +88,7 @@ namespace andywiecko.HeroesMusicManager
         {
             mainView.style.height = new StyleLength(Length.Percent(100));
             mainView.Q<Button>("new-game").clicked += () => { Root.Clear(); Root.Add(createView); clickAudioSource.Play(); };
-            mainView.Q<Button>("credits").clicked += () => { Debug.Log("Show credits"); clickAudioSource.Play(); };
+            mainView.Q<Button>("credits").clicked += () => { Root.Clear(); Root.Add(creditsView); clickAudioSource.Play(); };
             mainView.Q<Button>("exit").clicked += Application.Quit;
         }
 
@@ -132,8 +135,15 @@ namespace andywiecko.HeroesMusicManager
         {
             battleView.style.height = new StyleLength(Length.Percent(100));
 
-            battleView.Q<Button>("win").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.WinClip); afterBattle = true; clickAudioSource.Play(); };
-            battleView.Q<Button>("lose").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.LoseClip); afterBattle = true; clickAudioSource.Play(); };
+            battleView.Q<Button>("win").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.WinClip); isBattle = false; afterBattle = true; clickAudioSource.Play(); };
+            battleView.Q<Button>("lose").clicked += () => { Root.Clear(); Root.Add(currentPlayer); MainAudio(audioData.LoseClip); isBattle = false; afterBattle = true; clickAudioSource.Play(); };
+        }
+
+        private void RegisterCreditsView()
+        {
+            creditsView.style.height = new StyleLength(Length.Percent(100));
+            creditsView.Q<Button>("ok").clicked += () => { Root.Clear(); Root.Add(mainView); clickAudioSource.Play(); };
+            creditsView.Q<Label>("version").text = $"Version: {Application.version}";
         }
 
         private void CreatePlayers()
@@ -152,7 +162,7 @@ namespace andywiecko.HeroesMusicManager
                 playerView.style.height = new StyleLength(Length.Percent(100));
 
                 playerView.Q<Label>("player-town").text = townsData[i].ToString();
-                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; isBattle = true; MainAudio(audioData.GetRandomBattle(ref random)); clickAudioSource.Play(); };
+                playerView.Q<Button>("fight").clicked += () => { Root.Clear(); Root.Add(battleView); currentPlayer = playerView; afterBattle = false; isBattle = true; MainAudio(audioData.GetRandomBattle(ref random)); clickAudioSource.Play(); };
                 playerView.Q<Button>("build").clicked += buildAudioSource.Play;
                 playerView.Q<Button>("level").clicked += levelAudioSource.Play;
                 playerView.Q<Button>("exit").clicked += Application.Quit;

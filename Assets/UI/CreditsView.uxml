@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; align-self: center; align-items: center; justify-content: center;">
+        <ui:Label text="Credits" name="title" parse-escape-sequences="false" enabled="true" style="height: auto; color: rgb(255, 255, 255); text-overflow: clip; white-space: normal; width: 95%; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 18px; margin-bottom: 6px;" />
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; width: 100%; height: auto; align-self: flex-end; align-items: stretch; max-height: 25px;">
+            <ui:Label text="Author:" name="Label" style="width: 25%; -unity-text-align: middle-right; color: rgb(209, 209, 209); height: 25px; margin-bottom: 0; margin-top: 0; font-size: 12px;" />
+            <ui:Label text="Andrzej Więckowski" style="width: 75%; color: rgb(255, 255, 255); height: 25px; margin-bottom: 0; margin-top: 0; -unity-text-align: middle-left;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; width: 100%; max-height: 25px;">
+            <ui:Label text="Project:" style="width: 25%; -unity-text-align: middle-right; color: rgb(209, 209, 209); height: 25px; margin-bottom: 0; padding-top: 4px; margin-top: 0; font-size: 12px;" />
+            <ui:Label text="&lt;a href=&quot;https://github.com/andywiecko/Heroes-Music-Manager/&quot;&gt;&lt;u&gt;github page&lt;/u&gt;&lt;/a&gt;" style="width: 75%; color: rgb(64, 152, 255); -unity-font-style: bold; height: 25px; margin-bottom: 0; margin-top: 0; -unity-text-align: middle-left;" />
+        </ui:VisualElement>
+        <ui:Label text="&lt;align=justified&gt;&#10;⚠ &lt;b&gt;Disclaimer:&lt;/b&gt; This is a &lt;b&gt;fan-made, non-commercial project&lt;/b&gt; created solely for educational and entertainment purposes. It is &lt;b&gt;not an official product&lt;/b&gt; of Ubisoft Entertainment and is &lt;b&gt;not endorsed, sponsored, or affiliated&lt;/b&gt; with Ubisoft Entertainment in any way. All rights to the &lt;i&gt;Heroes of Might and Magic&lt;/i&gt; series — including its music, artwork, names, and other assets — remain the exclusive property of &lt;b&gt;Ubisoft Entertainment&lt;/b&gt; and their respective creators, and are used here solely for informational purposes within the scope of permitted use.&#10;&lt;/align&gt;" name="Label" style="height: auto; color: rgb(209, 209, 209); text-overflow: clip; white-space: normal; width: 95%; font-size: 10px; margin-top: 8px; margin-bottom: 4px;" />
+        <ui:Label text="Version: *.*.*" name="version" style="height: auto; color: rgb(209, 209, 209); text-overflow: clip; white-space: normal; width: 95%; font-size: 12px; margin-bottom: 4px;" />
+        <ui:Button text="✓" name="ok" style="-unity-font-style: bold; font-size: 18px; width: 50px;" />
+    </ui:VisualElement>
+</ui:UXML>
