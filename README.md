@@ -11,6 +11,12 @@ The repository includes the required `.meta` files, so if the assets are added c
 - Developed with **Unity `v6000.1.4`**, but should also work with other versions of Unity.
 - Requires the **Android Build Support** module for Unity.
 
+## 📲 Downloads
+
+The latest **Android `.apk` build** can be found on the [Releases](https://github.com/andywiecko/Heroes-Music-Manager/releases) page.
+
+- [➡️ Download latest `.apk`](https://github.com/andywiecko/Heroes-Music-Manager/releases/latest)
+
 ## 🚀 Roadmap v1
 
 - Create UI artwork inspired by the original game.
