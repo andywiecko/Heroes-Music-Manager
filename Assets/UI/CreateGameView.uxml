@@ -1,10 +1,10 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/leather-blue.png?fileID=2800000&amp;guid=d1d3800297ce1a74db7986be0731f703&amp;type=3#leather-blue&quot;); background-repeat: round round; background-size: 128px 128px;">
         <ui:ListView name="towns" item-template="project://database/Assets/UI/TownSelectionView.uxml?fileID=9197481963319205126&amp;guid=536c5c75d4de7a6489e287a30bfc0deb&amp;type=3#TownSelectionView" selection-type="None" show-border="false" horizontal-scrolling="false" show-foldout-header="false" allow-add="false" allow-remove="false" show-add-remove-footer="false" fixed-item-height="65" style="height: 70%;" />
         <ui:VisualElement style="flex-grow: 1; height: 30%; justify-content: flex-end;">
-            <ui:Button text="ADD PLAYER" name="add-player" style="height: auto;" />
-            <ui:Button text="BEGIN" name="begin" />
-            <ui:Button text="BACK" name="back" />
+            <ui:Button text="ADD PLAYER" name="add-player" style="height: auto; background-image: url(&quot;project://database/Assets/UI/button.png?fileID=2800000&amp;guid=d1158e21476120b4eb98ceacc5f5b3de&amp;type=3#button&quot;); background-size: contain; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=24ea660b17f615d45802a93112b7f5ff&amp;type=3#NotInter-Regular&quot;); font-size: 16px; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="BEGIN" name="begin" style="background-image: url(&quot;project://database/Assets/UI/button.png?fileID=2800000&amp;guid=d1158e21476120b4eb98ceacc5f5b3de&amp;type=3#button&quot;); background-size: contain; font-size: 16px; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="BACK" name="back" style="background-image: url(&quot;project://database/Assets/UI/button.png?fileID=2800000&amp;guid=d1158e21476120b4eb98ceacc5f5b3de&amp;type=3#button&quot;); background-size: contain; font-size: 16px; background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
