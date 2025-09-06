@@ -121,6 +121,8 @@ namespace andywiecko.HeroesMusicManager
             createView.Q<Button>("back").clicked += () => { Root.Clear(); Root.Add(mainView); townsData.Clear(); townsData.Add(Town.Castle); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
 
             var towns = createView.Q<ListView>("towns");
+            towns.RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
+
             towns.makeItem = () => towns.itemTemplate.CloneTree();
             towns.itemsSource = townsData;
             towns.bindItem = (v, i) =>
