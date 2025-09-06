@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -128,6 +129,29 @@ namespace andywiecko.HeroesMusicManager
             towns.bindItem = (v, i) =>
             {
                 v.Q<Label>("town").text = townsData[i].ToString();
+                var preview = v.Q<VisualElement>("preview");
+                preview.RemoveFromClassList("town-castle");
+                preview.RemoveFromClassList("town-rampart");
+                preview.RemoveFromClassList("town-tower");
+                preview.RemoveFromClassList("town-inferno");
+                preview.RemoveFromClassList("town-necropolis");
+                preview.RemoveFromClassList("town-dungeon");
+                preview.RemoveFromClassList("town-stronghold");
+                preview.RemoveFromClassList("town-fortress");
+                var previewStyle = townsData[i] switch
+                {
+                    Town.Castle => "town-castle",
+                    Town.Rampart => "town-rampart",
+                    Town.Tower => "town-tower",
+                    Town.Inferno => "town-inferno",
+                    Town.Necropolis => "town-necropolis",
+                    Town.Dungeon => "town-dungeon",
+                    Town.Stronghold => "town-stronghold",
+                    Town.Fortress => "town-fortress",
+                    _ => throw new NotImplementedException(),
+                };
+                preview.AddToClassList(previewStyle);
+
                 v.Q<Button>("remove").clicked += () => { townsData.RemoveAt(i); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
                 v.Q<Button>("left").clicked += () => { townsData[i] = (Town)(((int)townsData[i] - 1 + TownMax) % TownMax); towns.Rebuild(); clickAudio.Play(); };
                 v.Q<Button>("right").clicked += () => { townsData[i] = (Town)(((int)townsData[i] + 1) % TownMax); towns.Rebuild(); clickAudio.Play(); };

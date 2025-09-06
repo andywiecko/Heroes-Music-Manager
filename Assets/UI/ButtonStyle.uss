@@ -83,7 +83,8 @@
 }
 
 #unity-content-viewport {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.45);
     border-color: #4A5A8F;
     border-width: 1px;
 }
+
