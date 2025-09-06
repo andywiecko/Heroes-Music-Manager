@@ -5,3 +5,85 @@
 .unity-button:active {
     -unity-background-image-tint-color: rgba(200, 200, 200, 255);
 }
+
+
+
+
+
+.unity-scroller{
+    width: 16px;
+    opacity: 1;
+    translate: 3px 0px 0px;
+}
+
+.unity-scroller > .unity-scroller__high-button {
+    -unity-background-image-tint-color: white;
+    height: 16px;
+    width: 16px;
+    border-width: 0px;
+}
+
+#unity-slider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    min-width: auto;
+    width: 16px;
+}
+
+.unity-scroller--vertical > .unity-scroller__high-button {
+    -unity-background-image-tint-color: white;
+    background-image: url("project://database/Assets/UI/arrow-down.png");
+    background-size: cover;
+    border-width: 0px;
+}
+
+.unity-scroller > .unity-scroller__low-button {
+    -unity-background-image-tint-color: white;
+    height: 16px;
+    width: 16px;
+    border-width: 0px;
+}
+
+.unity-scroller--vertical > .unity-scroller__low-button {
+    -unity-background-image-tint-color: white;
+    background-image: url("project://database/Assets/UI/arrow-up.png");
+    background-size: cover;
+    border-width: 0px;
+}
+
+.unity-scroller__low-button:active {
+    -unity-background-image-tint-color: rgba(200, 200, 200, 255);
+}
+
+.unity-scroller__high-button:active {
+    -unity-background-image-tint-color: rgba(200, 200, 200, 255);
+}
+
+#unity-tracker {
+    background-color: rgba(0, 0, 0, .85);
+    border-right-color: #4A5A8F;
+    border-left-color: #4A5A8F;
+    border-width: 0px 1px;
+}
+
+#unity-dragger {
+    border-width: 0px;
+    left: 1px;
+    width: 14px;
+    background-image: url("project://database/Assets/UI/dragger.png");
+}
+
+#unity-drag-container:active #unity-dragger {
+    -unity-background-image-tint-color: rgba(200, 200, 200, 255);
+}
+
+.unity-scroller--vertical #unity-dragger{
+    max-height: 14px;
+    height: 14px;
+}
+
+#unity-content-viewport {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: #4A5A8F;
+    border-width: 1px;
+}
