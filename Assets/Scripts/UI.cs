@@ -126,6 +126,7 @@ namespace andywiecko.HeroesMusicManager
             towns.bindItem = (v, i) =>
             {
                 v.Q<Label>("town").text = townsData[i].ToString();
+
                 var preview = v.Q<VisualElement>("preview");
                 preview.RemoveFromClassList("town-castle");
                 preview.RemoveFromClassList("town-rampart");
@@ -159,12 +160,12 @@ namespace andywiecko.HeroesMusicManager
                 v.Q<Button>("right").clicked += () => { townsData[i] = (Town)(((int)townsData[i] + 1) % TownMax); towns.Rebuild(); clickAudio.Play(); };
                 v.Q<Button>("right").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
 
-                if (i != 0 && townsData.Count > 1) v.Q<Button>("up").clicked += () => { (townsData[i - 1], townsData[i]) = (townsData[i], townsData[i - 1]); towns.Rebuild(); clickAudio.Play(); };
-                else v.Q<Button>("up").SetEnabled(false);
+                v.Q<Button>("up").clicked += () => { (townsData[i - 1], townsData[i]) = (townsData[i], townsData[i - 1]); towns.Rebuild(); clickAudio.Play(); };
+                v.Q<Button>("up").SetEnabled(i != 0 && townsData.Count > 1);
                 v.Q<Button>("up").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
 
-                if (i != townsData.Count - 1 && townsData.Count > 1) v.Q<Button>("down").clicked += () => { (townsData[i + 1], townsData[i]) = (townsData[i], townsData[i + 1]); towns.Rebuild(); clickAudio.Play(); };
-                else v.Q<Button>("down").SetEnabled(false);
+                v.Q<Button>("down").clicked += () => { (townsData[i + 1], townsData[i]) = (townsData[i], townsData[i + 1]); towns.Rebuild(); clickAudio.Play(); };
+                v.Q<Button>("down").SetEnabled(i != townsData.Count - 1 && townsData.Count > 1);
                 v.Q<Button>("down").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
             };
 
