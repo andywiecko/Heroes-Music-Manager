@@ -119,11 +119,8 @@ namespace andywiecko.HeroesMusicManager
             var begin = createView.Q<Button>("begin");
             begin.clicked += () => { Root.Clear(); CreatePlayers(); Root.Add(nextPlayerViews[0]); MainAudio(audioData.NextWeekClip); clickAudio.Play(); };
 
-            createView.Q<Button>("back").clicked += () => { Root.Clear(); Root.Add(mainView); townsData.Clear(); townsData.Add(Town.Castle); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
-
             var towns = createView.Q<ListView>("towns");
             towns.RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
-
             towns.makeItem = () => towns.itemTemplate.CloneTree();
             towns.itemsSource = townsData;
             towns.bindItem = (v, i) =>
@@ -175,6 +172,7 @@ namespace andywiecko.HeroesMusicManager
             scrollView.verticalScrollerVisibility = ScrollerVisibility.AlwaysVisible;
 
             createView.Q<Button>("add-player").clicked += () => { townsData.Add((Town)(townsData.Count % TownMax)); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
+            createView.Q<Button>("back").clicked += () => { Root.Clear(); Root.Add(mainView); townsData.Clear(); townsData.Add(Town.Castle); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
         }
 
         private void RegisterBattleView()
