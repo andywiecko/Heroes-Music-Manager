@@ -30,3 +30,8 @@
 .town-fortress {
     background-image: url("project://database/Assets/UI/town-fortress.png");
 }
+
+
+#remove:active {
+    -unity-background-image-tint-color: rgba(200, 200, 200, 255);
+}
