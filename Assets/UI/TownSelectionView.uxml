@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/UI/HeroesStyle.uss?fileID=7433441132597879392&amp;guid=2c9265e7d33f12e49a3701cc5499bc42&amp;type=3#HeroesStyle" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 65px; width: auto;">
         <ui:VisualElement style="flex-grow: 0; width: 20%; justify-content: center; align-items: center; align-self: stretch;">
-            <ui:Button text="↑" name="up" style="width: 20px; height: 20px;" />
-            <ui:Button text="↓" name="down" style="width: 20px; height: 20px;" />
+            <ui:Button name="up" style="width: 20px; height: 20px; background-image: url(&quot;project://database/Assets/UI/arrow-up-2.png?fileID=2800000&amp;guid=49e31d7713706ea40987caa00b338cce&amp;type=3#arrow-up-2&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; -unity-background-scale-mode: scale-to-fit;" />
+            <ui:Button name="down" style="width: 20px; height: 20px; background-image: url(&quot;project://database/Assets/UI/arrow-down-2.png?fileID=2800000&amp;guid=aa2a619caaa53a540b0de658d948d4da&amp;type=3#arrow-down-2&quot;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 0; flex-direction: column; width: 55%; align-self: center; align-items: center; -unity-text-align: middle-left; justify-content: center; align-content: center; margin-top: 0; margin-bottom: 0;">
             <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center; align-items: center; height: auto; align-self: center; align-content: center;">
