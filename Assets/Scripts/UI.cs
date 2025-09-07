@@ -153,14 +153,22 @@ namespace andywiecko.HeroesMusicManager
                 preview.AddToClassList(previewStyle);
 
                 v.Q<Button>("remove").clicked += () => { townsData.RemoveAt(i); towns.Rebuild(); begin.SetEnabled(townsData.Count > 0); clickAudio.Play(); };
+                v.Q<Button>("remove").SetEnabled(townsData.Count > 1);
+                v.Q<Button>("remove").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
+
                 v.Q<Button>("left").clicked += () => { townsData[i] = (Town)(((int)townsData[i] - 1 + TownMax) % TownMax); towns.Rebuild(); clickAudio.Play(); };
+                v.Q<Button>("left").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
+
                 v.Q<Button>("right").clicked += () => { townsData[i] = (Town)(((int)townsData[i] + 1) % TownMax); towns.Rebuild(); clickAudio.Play(); };
+                v.Q<Button>("right").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
 
                 if (i != 0 && townsData.Count > 1) v.Q<Button>("up").clicked += () => { (townsData[i - 1], townsData[i]) = (townsData[i], townsData[i - 1]); towns.Rebuild(); clickAudio.Play(); };
                 else v.Q<Button>("up").SetEnabled(false);
+                v.Q<Button>("up").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
 
                 if (i != townsData.Count - 1 && townsData.Count > 1) v.Q<Button>("down").clicked += () => { (townsData[i + 1], townsData[i]) = (townsData[i], townsData[i + 1]); towns.Rebuild(); clickAudio.Play(); };
                 else v.Q<Button>("down").SetEnabled(false);
+                v.Q<Button>("down").RegisterCallback<PointerMoveEvent>(e => e.StopPropagation(), TrickleDown.TrickleDown); // NOTE: disable dragging
             };
 
             var scrollView = towns.Q<ScrollView>();
