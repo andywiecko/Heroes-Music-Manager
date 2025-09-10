@@ -1,0 +1,78 @@
+
+.town-castle {
+    background-image: url("project://database/Assets/UI/town-castle.png");
+}
+
+.town-rampart {
+    background-image: url("project://database/Assets/UI/town-rampart.png");
+}
+
+.town-tower {
+    background-image: url("project://database/Assets/UI/town-tower.png");
+}
+
+.town-inferno {
+    background-image: url("project://database/Assets/UI/town-inferno.png");
+}
+
+.town-necropolis {
+    background-image: url("project://database/Assets/UI/town-necropolis.png");
+}
+
+.town-dungeon {
+    background-image: url("project://database/Assets/UI/town-dungeon.png");
+}
+
+.town-stronghold {
+    background-image: url("project://database/Assets/UI/town-stronghold.png");
+}
+
+.town-fortress {
+    background-image: url("project://database/Assets/UI/town-fortress.png");
+}
+
+
+.flag-castle {
+    /* blue */
+    background-image: url("project://database/Assets/UI/town-castle.png");
+}
+
+.flag-rampart {
+    /* green */
+    background-image: url("project://database/Assets/UI/town-rampart.png");
+}
+
+.flag-tower {
+    background-image: url("project://database/Assets/UI/town-tower.png");
+}
+
+.flag-inferno {
+    /* red */
+    background-image: url("project://database/Assets/UI/town-inferno.png");
+}
+
+.flag-necropolis {
+    /* gray/black */
+    background-image: url("project://database/Assets/UI/town-necropolis.png");
+}
+
+.flag-dungeon {
+    /* fiolet */
+    background-image: url("project://database/Assets/UI/town-dungeon.png");
+}
+
+.flag-stronghold {
+    /* tan/brown */
+    background-image: url("project://database/Assets/UI/town-stronghold.png");
+}
+
+.flag-fortress {
+    /* dark green */
+    background-image: url("project://database/Assets/UI/town-fortress.png");
+}
+
+
+
+#remove:active {
+    -unity-background-image-tint-color: rgba(200, 200, 200, 255);
+}
