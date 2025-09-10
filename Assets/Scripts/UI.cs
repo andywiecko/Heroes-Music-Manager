@@ -201,6 +201,18 @@ namespace andywiecko.HeroesMusicManager
 
                 nextPlayerView.Q<Label>("player-name").text = $"Player {i + 1}'s turn";
                 nextPlayerView.Q<Label>("player-color").text = townsData[i].ToString();
+                nextPlayerView.Q<VisualElement>("flag").AddToClassList(townsData[i] switch
+                {
+                    Town.Castle => "flag-castle",
+                    Town.Rampart => "flag-rampart",
+                    Town.Tower => "flag-tower",
+                    Town.Inferno => "flag-inferno",
+                    Town.Necropolis => "flag-necropolis",
+                    Town.Dungeon => "flag-dungeon",
+                    Town.Stronghold => "flag-stronghold",
+                    Town.Fortress => "flag-fortress",
+                    _ => throw new NotImplementedException()
+                });
 
                 var playerView = playerViewTemplate.CloneTree();
                 playerViews.Add(playerView);

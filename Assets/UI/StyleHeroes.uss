@@ -31,47 +31,37 @@
     background-image: url("project://database/Assets/UI/town-fortress.png");
 }
 
-
 .flag-castle {
-    /* blue */
-    background-image: url("project://database/Assets/UI/town-castle.png");
+    background-image: url("project://database/Assets/UI/flag-blue.png");
 }
 
 .flag-rampart {
-    /* green */
-    background-image: url("project://database/Assets/UI/town-rampart.png");
+    background-image: url("project://database/Assets/UI/flag-green.png");
 }
 
 .flag-tower {
-    background-image: url("project://database/Assets/UI/town-tower.png");
+    background-image: url("project://database/Assets/UI/flag-light-gray.png");
 }
 
 .flag-inferno {
-    /* red */
-    background-image: url("project://database/Assets/UI/town-inferno.png");
+    background-image: url("project://database/Assets/UI/flag-red.png");
 }
 
 .flag-necropolis {
-    /* gray/black */
-    background-image: url("project://database/Assets/UI/town-necropolis.png");
+    background-image: url("project://database/Assets/UI/flag-dark-gray.png");
 }
 
 .flag-dungeon {
-    /* fiolet */
-    background-image: url("project://database/Assets/UI/town-dungeon.png");
+    background-image: url("project://database/Assets/UI/flag-purple.png");
 }
 
 .flag-stronghold {
-    /* tan/brown */
-    background-image: url("project://database/Assets/UI/town-stronghold.png");
+    background-image: url("project://database/Assets/UI/flag-tan.png");
 }
 
 .flag-fortress {
-    /* dark green */
-    background-image: url("project://database/Assets/UI/town-fortress.png");
+    background-image: url("project://database/Assets/UI/flag-dark-green.png");
 }
-
-
 
 #remove:active {
     -unity-background-image-tint-color: rgba(200, 200, 200, 255);
